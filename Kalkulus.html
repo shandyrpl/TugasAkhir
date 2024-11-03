@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integral dan Turunan</title>
+  <style>
+    /* Styling form container */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-top: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3b7dc3;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }  
+    /* Sidebar styling */
+    .sidebar {
+      width: 200px;
+      height: 100vh;
+      background-color: #87CEFA;
+      position: fixed;
+      right: -200px;
+      top: 0;
+      transition: left 0.3s ease;
+    }
+
+    /* List items inside sidebar */
+    .sidebar ul {
+      list-style: none;
+      padding: 20px;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+
+    /* Menu button styling */
+    .menu-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Sidebar active state */
+    .sidebar.active {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Integral dan Derivatif: ∫ axⁿ dx</h2>
+
+    <div class="form-group">
+      <label for="koefisien">Koefisien (a):</label>
+      <input type="number" id="koefisien" placeholder="Masukkan koefisien (a)">
+    </div>
+
+    <div class="form-group">
+      <label for="pangkat">Pangkat (n):</label>
+      <input type="number" id="pangkat" placeholder="Masukkan pangkat (n)">
+    </div>
+
+    <button onclick="hitungIntegral()">Hitung Integral</button>
+    <br>
+    <br>
+    <button onclick="hitungTurunan()">Hitung Derivatif</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    // Fungsi untuk menghitung integral dari ax^n
+    function hitungIntegral() {
+      const a = parseFloat(document.getElementById("koefisien").value);
+      const n = parseFloat(document.getElementById("pangkat").value);
+      if (isNaN(a) || isNaN(n)) {
+        document.getElementById("result").innerText = "Masukkan nilai koefisien dan pangkat.";
+        return;
+      }
+
+      const integralKoefisien = a / (n + 1);
+      const integralPangkat = n + 1;
+      document.getElementById("result").innerText = `∫ ${a}x^${n} dx = (${integralKoefisien.toFixed(2)}) x^${integralPangkat} + C`;
+    }
+
+    // Fungsi untuk menghitung turunan dari ax^n
+    function hitungTurunan() {
+      const a = parseFloat(document.getElementById("koefisien").value);
+      const n = parseFloat(document.getElementById("pangkat").value);
+      if (isNaN(a) || isNaN(n)) {
+        document.getElementById("result").innerText = "Masukkan nilai koefisien dan pangkat.";
+        return;
+      }
+
+      const turunanKoefisien = a * n;
+      const turunanPangkat = n - 1;
+      document.getElementById("result").innerText = `f'(x) = ${turunanKoefisien}x^${turunanPangkat}`;
+    }
+  </script>
+  <!-- Menu button -->
+  <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Logika Informatika.html">Logika</a></li>
+      <li><a href="Kalkulus.html">Kalkulus</a></li>
+      <li><a href="ular.html">Games</a></li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
+  
+
+</body>
+</html>

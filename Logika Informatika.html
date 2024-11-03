@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth Table Logic</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }  
+    /* Sidebar styling */
+    .sidebar {
+      width: 200px;
+      height: 100vh;
+      background-color: #87CEFA;
+      position: fixed;
+      right: -200px;
+      top: 0;
+      transition: left 0.3s ease;
+    }
+
+    /* List items inside sidebar */
+    .sidebar ul {
+      list-style: none;
+      padding: 20px;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+
+    /* Menu button styling */
+    .menu-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Sidebar active state */
+    .sidebar.active {
+      right: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Truth Table Operation</h1>
+            <div class="logo-container">
+                <img src="LOGO TEKNOKRAT.png" alt="Logo Teknokrat">
+        </header>
+        <section class="calculator">
+            <div class="inputs">
+                <div class="input-group">
+                    <h3>Pilih Nilai P:</h3>
+                    <button onclick="setP(true)">P = True</button>
+                    <button onclick="setP(false)">P = False</button>
+                </div>
+                <div class="input-group">
+                    <h3>Pilih Nilai Q:</h3>
+                    <button onclick="setQ(true)">Q = True</button>
+                    <button onclick="setQ(false)">Q = False</button>
+                </div>
+                <div class="input-group">
+                    <h3>Pilih Operasi Logika:</h3>
+                    <button onclick="setOperation('AND')">∧ (Konjungsi)</button>
+                    <button onclick="setOperation('OR')">∨ (Disjungsi)</button>
+                    <button onclick="setOperation('IMPLIES')">→ (Implikasi)</button>
+                    <button onclick="setOperation('BICONDITIONAL')">↔ (Biimplikasi)</button>
+                    <button onclick="setOperation('NOT')">¬ (Negasi)</button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>P</th>
+                        <th>Q</th>
+                        <th>Hasil</th>
+                    </tr>
+                </thead>
+                <tbody id="result">
+                    <tr>
+                        <td id="valP">-</td>
+                        <td id="valQ">-</td>
+                        <td id="valResult">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <script src="script.js"></script>
+      <!-- Menu button -->
+  <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Logika Informatika.html">Logika</a></li>
+      <li><a href="Kalkulus.html">Kalkulus</a></li>
+      <li><a href="ular.html">Games</a></li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

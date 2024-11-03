@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Kelompok 5</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: rgb(5, 190, 236);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.profile-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+}
+
+.profile-card {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid blue;
+    object-fit: cover;
+}
+
+.profile-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.profile-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo-container img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+}
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }  
+    /* Sidebar styling */
+    .sidebar {
+      width: 200px;
+      height: 100vh;
+      background-color: #87CEFA;
+      position: fixed;
+      right: -200px;
+      top: 0;
+      transition: left 0.3s ease;
+    }
+
+    /* List items inside sidebar */
+    .sidebar ul {
+      list-style: none;
+      padding: 20px;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+
+    /* Menu button styling */
+    .menu-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Sidebar active state */
+    .sidebar.active {
+      right: 0;
+    }
+
+</style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="LOGO TEKNOKRAT.png" alt="Logo Teknokrat">
+    </div>
+    <div class="header">
+        <h1>Profil Kelompok 2</h1>
+    </div>
+    <div class="profile-container">
+        <div class="profile-card">
+            <img src="IF_24312031_Ma'ruf Budi Santoso_DSC_2352.JPG" alt="Maruf Budi Santoso">
+            <h3>Maruf Budi Santoso</h3>
+            <p>NPM: 24312031</p>
+        </div>
+        <div class="profile-card">
+            <img src="IF_24312003_Aditya Firjatullah_DSC_2298.JPG" alt="Aditya Firjatullah">
+            <h3>Aditya Firjatullah</h3>
+            <p>NPM: 24312003</p>
+        </div>
+        <div class="profile-card">
+            <img src="IF_24312016_El Shandy_DSC_2275.JPG" alt= "EL Shandy">
+            <h3>EL Shandy</h3>
+            <p>NPM: 24312016</p>
+        </div>
+        <div class="profile-card">
+            <img src="IF_24312001_Abi Prasetio_DSC_2281.JPG" alt="Abi Prasetio">
+            <h3>Abi Prasetio</h3>
+            <p>NPM: 24312001</p>
+        </div>
+  <!-- Menu button -->
+  <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Logika Informatika.html">Logika</a></li>
+      <li><a href="Kalkulus.html">Kalkulus</a></li>
+      <li><a href="ular.html">Games</a></li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

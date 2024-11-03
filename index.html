@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth Table Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>Truth Table Calculator</header>
+        <section class="calculator">
+            <h2>Truth Table Calculator</h2>
+            <div class="inputs">
+                <div class="input-group">
+                    <h3>Pilih Nilai A:</h3>
+                    <button onclick="setA(true)">A = true</button>
+                    <button onclick="setA(false)">A = false</button>
+                </div>
+                <div class="input-group">
+                    <h3>Pilih Nilai B:</h3>
+                    <button onclick="setB(true)">B = true</button>
+                    <button onclick="setB(false)">B = false</button>
+                </div>
+                <div class="input-group">
+                    <h3>Pilih Operasi Logika:</h3>
+                    <button onclick="setOperation('AND')">∧ (Konjungsi)</button>
+                    <button onclick="setOperation('OR')">∨ (Disjungsi)</button>
+                    <button onclick="setOperation('IMPLIES')">→ (Implikasi)</button>
+                    <button onclick="setOperation('BICONDITIONAL')">↔ (Biimplikasi)</button>
+                    <button onclick="setOperation('NOT')">¬ (Negasi)</button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>Hasil</th>
+                    </tr>
+                </thead>
+                <tbody id="result">
+                    <tr>
+                        <td id="valA">-</td>
+                        <td id="valB">-</td>
+                        <td id="valResult">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
